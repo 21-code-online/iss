@@ -1,14 +1,13 @@
 #!/bin/python3
 
 import json
-import urllib.request
+import requests
 from turtle import *
-import time
 
-# http://open-notify.org/Open-Notify-API/
+# https://docs.python-requests.org/en/master/
 url = 'http://api.open-notify.org/astros.json'
-response = urllib.request.urlopen(url)
-result = json.loads(response.read())
+response = requests.get(url)
+result = json.loads(response.text)
 print(result)
 
 screen = Screen()
